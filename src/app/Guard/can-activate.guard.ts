@@ -16,7 +16,7 @@ export class CanActivateGuard implements CanActivate, CanActivateChild {
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     if(this.ServiceService.isAdmin()){
       window.alert("welcome Admin...")
-      this.router.navigate(['/serve']);
+      this.router.navigate(['package']);
       return true;
     }else{
       window.alert("Authorized persons only")
@@ -28,7 +28,7 @@ export class CanActivateGuard implements CanActivate, CanActivateChild {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(this.ServiceService.LogedIn()){
         alert('Login Success');
-        this.router.navigate(['/serve'])
+        this.router.navigate(['aboutus'])
         return true;
       }else{
         window.alert('Provide Authendication');
